@@ -2,5 +2,8 @@
 <project version="4">
   <component name="VcsDirectoryMappings">
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/pivio-client" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/pivio-server" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/pivio-web" vcs="Git" />
   </component>
 </project>
