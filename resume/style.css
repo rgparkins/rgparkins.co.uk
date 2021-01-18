@@ -12,7 +12,6 @@ display:block;
 }
 
 html, body {
-	background: #181818;
 	background: #ffffff;
 	font-family: 'Lato', helvetica, arial, sans-serif;
 	font-size: 16px;
@@ -254,7 +253,7 @@ section:last-child {
 
 @media print {
     #cv {
-        width: 100%;
+        width: 100%
     }
 }
 

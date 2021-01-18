@@ -20,11 +20,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f0e0a7aa-c964-45e5-b8da-a19f05193ad6" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/resume/index-print.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resume/index 2.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resume/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/resume/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resume/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/resume/style.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -62,7 +59,7 @@
     <property name="HbShouldOpenHtmlAsHb" value="" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/resume" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path" value="node" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
@@ -111,7 +108,9 @@
       <workItem from="1604567626115" duration="227000" />
       <workItem from="1605302444435" duration="3526000" />
       <workItem from="1606303840238" duration="1334000" />
-      <workItem from="1606311697248" duration="1183000" />
+      <workItem from="1606311697248" duration="1541000" />
+      <workItem from="1606469041171" duration="92000" />
+      <workItem from="1610825665151" duration="1218000" />
     </task>
     <servers />
   </component>
