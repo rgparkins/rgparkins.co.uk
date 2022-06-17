@@ -30,14 +30,14 @@ p {
 #cv {
 	width: 90%;
 	max-width: 800px;
-	background: #f3f3f3;
+	background: #ffffff;
 	margin: 30px auto;
 }
 
 .mainDetails {
 	padding: 25px 35px;
 	border-bottom: 2px solid #cf8a05;
-	background: #ededed;
+	background: #ffffff;
 }
 
 #name h1 {
@@ -105,7 +105,7 @@ p {
 
 
 section {
-	border-top: 1px solid #dedede;
+	border-top: 1px solid #ffffff;
 	padding: 20px 0 0;
 }
 
@@ -119,12 +119,12 @@ section:last-child {
 
 .sectionTitle {
 	float: left;
-	width: 25%;
+	width: 12.5%;
 }
 
 .sectionContent {
 	float: right;
-	width: 72.5%;
+	width: 85%;
 }
 
 .sectionTitle h1 {
