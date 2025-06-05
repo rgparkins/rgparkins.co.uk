@@ -3,3 +3,5 @@
   "error": "Could not detect supported target files in /project.\nPlease see our documentation for supported languages and target files: https://support.snyk.io/hc/en-us/articles/360000911957-Language-support and make sure you are in the right directory.",
   "path": "/project"
 }
+
+docker run --hostname=2dd1d463922e --user=mssql --env=PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin --env=MSSQL_RPC_PORT=135 --env=CONFIG_EDGE_BUILD= --env=MSSQL_PID=developer --network=bridge --restart=no --label='com.microsoft.product=Microsoft SQL Server' --label='com.microsoft.version=16.0.4125.3' --label='org.opencontainers.image.ref.name=ubuntu' --label='org.opencontainers.image.version=22.04' --label='vendor=Microsoft' --runtime=runc -d mcr.microsoft.com/mssql/server:latest

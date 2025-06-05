@@ -14,8 +14,9 @@ display:block;
 html, body {
 	background: #ffffff;
 	font-family: 'Lato', helvetica, arial, sans-serif;
-	font-size: 16px;
+	font-size: 13px;
 	color: #222;
+	text-align: justify;
 }
 
 .clear {clear: both;}
@@ -60,9 +61,9 @@ li {
 	font-family: 'Rokkitt', Helvetica, Arial, sans-serif;
 }
 
-#mainArea {
+/* #mainArea {
 	padding: 0 40px;
-}
+} */
 
 #headshot {
 	width: 12.5%;
@@ -197,12 +198,12 @@ li {
 
 .keySkills ul {
 	list-style-type: circle;
-    margin-left: 10px;
+    margin-left: 0px;
 }
 
 .keySkills ul li {
     margin-bottom: 3px;
-    padding-bottom: 5px;
+    padding-bottom: 3px;
 }
 
 @media all and (min-width: 602px) and (max-width: 800px) {
@@ -260,9 +261,9 @@ li {
 		padding: 15px 0 0;
 	}
 	
-	#mainArea {
+	/* #mainArea {
 		padding: 0 25px;
-	}
+	} */
 
 	
 	.keySkills {
