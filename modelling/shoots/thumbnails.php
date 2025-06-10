@@ -1,65 +1,51 @@
 <?php
-if (!isset($_GET['src']) || !isset($_GET['w'])) {
+if (!isset($_GET['src'])) {
     http_response_code(400);
-    exit('Missing parameters');
+    exit('Missing image source');
 }
 
-$src = $_GET['src'];
-$width = (int)$_GET['w'];
+$imagePath = urldecode($_GET['src']);
+$fullPath = realpath($imagePath);
 
-if (!file_exists($src)) {
-    http_response_code(404);
-    exit('Image not found');
+// Security: ensure file is within allowed directory
+$baseDir = realpath(__DIR__);
+if (strpos($fullPath, $baseDir) !== 0 || !file_exists($fullPath)) {
+    http_response_code(403);
+    exit('Access denied');
 }
 
-$info = getimagesize($src);
-$type = $info[2];
-
-// Load image
-switch ($type) {
-    case IMAGETYPE_JPEG:
-        $image = imagecreatefromjpeg($src);
-        $exif = @exif_read_data($src);
-        if ($exif && isset($exif['Orientation'])) {
-            switch ($exif['Orientation']) {
-                case 3:
-                    $image = imagerotate($image, 180, 0);
-                    break;
-                case 6:
-                    $image = imagerotate($image, -90, 0);
-                    break;
-                case 8:
-                    $image = imagerotate($image, 90, 0);
-                    break;
-                // other cases not needed for most uses
-            }
-        }
-        break;
-    case IMAGETYPE_PNG:
-        $image = imagecreatefrompng($src);
-        break;
-    case IMAGETYPE_GIF:
-        $image = imagecreatefromgif($src);
-        break;
-    case IMAGETYPE_WEBP:
-        $image = imagecreatefromwebp($src);
-        break;
-    default:
-        http_response_code(415);
-        exit('Unsupported image type');
+$ext = strtolower(pathinfo($fullPath, PATHINFO_EXTENSION));
+if (!in_array($ext, ['jpg', 'jpeg'])) {
+    http_response_code(415);
+    exit('Unsupported image format');
 }
 
-$origWidth = imagesx($image);
-$origHeight = imagesy($image);
-$newHeight = intval($origHeight * $width / $origWidth);
+// Load and rotate image if needed
+$img = imagecreatefromjpeg($fullPath);
+$exif = @exif_read_data($fullPath);
+$orientation = $exif['Orientation'] ?? 1;
+
+switch ($orientation) {
+    case 3: $img = imagerotate($img, 180, 0); break;
+    case 6: $img = imagerotate($img, -90, 0); break;
+    case 8: $img = imagerotate($img, 90, 0); break;
+}
 
 // Resize
-$thumb = imagecreatetruecolor($width, $newHeight);
-imagecopyresampled($thumb, $image, 0, 0, 0, 0, $width, $newHeight, $origWidth, $origHeight);
+$maxWidth = 300;
+$width = imagesx($img);
+$height = imagesy($img);
+$ratio = $maxWidth / $width;
 
-// Output
+$newWidth = $maxWidth;
+$newHeight = intval($height * $ratio);
+
+$thumb = imagecreatetruecolor($newWidth, $newHeight);
+imagecopyresampled($thumb, $img, 0, 0, 0, 0, $newWidth, $newHeight, $width, $height);
+
 header('Content-Type: image/jpeg');
 imagejpeg($thumb, null, 85);
-imagedestroy($image);
+
+imagedestroy($img);
 imagedestroy($thumb);
 ?>

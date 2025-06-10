@@ -1,52 +1,85 @@
-<?
-$imageDir = './';
-$thumbWidth = 150;
+<?php
+$root = './'; // current folder
+$directories = array_filter(glob($root . '/*'), 'is_dir');
 
-$images = glob($imageDir . '*.{JPG,jpg,jpeg,png,gif,webp}', GLOB_BRACE);
-
-echo "<!DOCTYPE html>
-<html>
+function getFirstImage($dir) {
+    $images = glob("$dir/*.{jpg,jpeg,png,gif,JPG}", GLOB_BRACE);
+    return $images ? $images[0] : null;
+}
+?>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <title>rgparkins modelling</title>
+    <meta charset="UTF-8">
+    <title>Gallery Directory</title>
     <style>
-        body { font-family: sans-serif; background: #111; color: #eee; margin: 0; padding: 20px; }
-        .gallery { display: flex; flex-wrap: wrap; gap: 10px; }
-        .thumbnail img { border: 2px solid #333; border-radius: 4px; cursor: pointer; transition: 0.3s; }
-        .thumbnail img:hover { border-color: #0ff; }
-        .lightbox {
-            display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(0,0,0,0.9); align-items: center; justify-content: center;
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background: #f7f9fc;
+            margin: 0;
+            padding: 2rem;
+            color: #333;
         }
-        .lightbox img { max-width: 90%; max-height: 90%; border: 4px solid white; border-radius: 8px; }
-        .lightbox:target { display: flex; }
+
+        h1 {
+            text-align: center;
+            font-size: 2.5rem;
+            color: #222;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+            padding: 0;
+        }
+
+        .card {
+            background: #fff;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            text-align: center;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08);
+        }
+
+        .card img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .caption {
+            padding: 1rem;
+            font-size: 1rem;
+            font-weight: 500;
+            background: #fafafa;
+        }
     </style>
 </head>
 <body>
-    <h1>30/05/2025 - test shoot</h1>
-    <div class='gallery'>";
-
-foreach ($images as $image) {
-    $encoded = urlencode($image);
-    echo "<a class='thumbnail' href='#lightbox' data-img='{$image}'>
-            <img src='thumbnails.php?src={$encoded}&w={$thumbWidth}' alt=''>
-          </a>";
-}
-
-echo "</div>
-
-<div id='lightbox' class='lightbox' onclick='this.style.display=\"none\"'>
-    <img id='lightbox-img' src=''>
-</div>
-
-<script>
-    document.querySelectorAll('.thumbnail').forEach(link => {
-        link.addEventListener('click', function(e) {
-            e.preventDefault();
-            document.getElementById('lightbox-img').src = this.getAttribute('data-img');
-            document.getElementById('lightbox').style.display = 'flex';
-        });
-    });
-</script>
+    <h1>Image Galleries</h1>
+    <div class="gallery">
+        <?php foreach ($directories as $dir): 
+            $imgPath = getFirstImage($dir);
+            if ($imgPath):
+                $link = basename($dir);
+        ?>
+            <div class="item">
+                <a href="viewer.php?dir=<?=$link?>">
+                    <img src="thumbnail.php?src=<?= urlencode($imgPath) ?>" alt="<?= htmlspecialchars($link) ?>">
+                </a>
+                <div><?= htmlspecialchars($link) ?></div>
+            </div>
+        <?php endif; endforeach; ?>
+    </div>
 </body>
-</html>";
-?>
+</html>
