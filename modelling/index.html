@@ -2,96 +2,127 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Welcome to My Gallery</title>
+  <title>RG Parkins — Portfolio</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
   <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
-      margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      color: #fff;
-      background: url('shoots/test-shoot/129B3115.JPG') no-repeat center center fixed;
-      background-size: cover;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
+        margin: 0;
+        font-family: 'Segoe UI', sans-serif;
+        color: #fff;
+        background: url('129B3116.JPG') no-repeat center center fixed;
+        background-size: contain;
+        background-color: #000; /* fallback for any gaps around image */
     }
 
-    .navbar {
-      display: flex;
-      justify-content: flex-end;
-      align-items: center;
-      padding: 1.2rem 2rem;
-      background: rgba(0, 0, 0, 0.4);
+    body::before {
+        content: "";
+        position: fixed;
+        top: 0; left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0,0,0,0.4); /* darkens image subtly for contrast */
+        z-index: -1;
     }
 
-    .navbar a {
-      color: #fff;
-      text-decoration: none;
-      margin-left: 1.5rem;
+    .navbar-custom {
+      background-color: rgba(0, 0, 0, 0.6);
+      z-index: 1000;
+    }
+
+    .nav-link {
+      color: #fff !important;
       font-weight: 500;
-      font-size: 1rem;
-      transition: color 0.2s;
+      margin-left: 1rem;
     }
 
-    .navbar a:hover {
+    .nav-link:hover {
+      color: #ffd700 !important;
+    }
+
+    .section {
+      padding: 6rem 2rem;
+      backdrop-filter: blur(8px);
+      background-color: rgba(0, 0, 0, 0.5);
+    }
+
+    .section h2 {
+      margin-bottom: 1rem;
+      font-weight: 700;
+    }
+
+    .btn-custom {
+      background-color: #ffd700;
+      color: #000;
+      font-weight: bold;
+      border-radius: 8px;
+    }
+
+    .btn-custom:hover {
+      background-color: #e6c200;
+    }
+
+    a {
       color: #ffd700;
     }
 
-    .hero {
-      flex-grow: 1;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 0 2rem;
-    }
-
-    .hero-content {
-      background: rgba(0, 0, 0, 0.6);
-      padding: 2rem 3rem;
-      border-radius: 12px;
-      max-width: 600px;
-    }
-
-    .hero h1 {
-      font-size: 2.5rem;
-      margin-bottom: 1rem;
-    }
-
-    .hero p {
-      font-size: 1.1rem;
-      line-height: 1.6;
-    }
-
-    .hero a.button {
-      display: inline-block;
-      margin-top: 1.5rem;
-      padding: 0.8rem 1.5rem;
-      background: #ffd700;
-      color: #000;
-      font-weight: bold;
-      text-decoration: none;
-      border-radius: 8px;
-      transition: background 0.3s;
-    }
-
-    .hero a.button:hover {
-      background: #e6c200;
+    a:hover {
+      color: #e6c200;
     }
   </style>
 </head>
+
 <body>
 
-  <div class="navbar">
-    <a href="shoots/index.php">Shoots</a>
-  </div>
-
-  <div class="hero">
-    <div class="hero-content">
-      <h1>Welcome</h1>
-      <p>Ping me on <a href="mailto:richard@rgparkins.co.uk">email</a> for access</p>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-custom sticky-top px-4">
+    <div class="container-fluid justify-content-end">
+      <a class="nav-link" href="#shoots">Shoots</a>
+      <a class="nav-link" href="#work">Work</a>
+      <a class="nav-link" href="#contact">Contact</a>
     </div>
-  </div>
+  </nav>
 
+  <!-- Hero -->
+  <section class="d-flex align-items-center justify-content-center text-center" style="min-height: 100vh;">
+    <div class="hero-content text-white">
+      <h1 class="display-5 fw-bold">Welcome</h1>
+      <p class="lead mb-3">Latest shoot <a href="/shoots/viewer.php?dir=Initial+shoot+-+1st+June+2025">here</a></p>
+    </div>
+  </section>
+
+  <!-- Shoots Section -->
+  <section id="shoots" class="section text-center">
+    <div class="container">
+      <h2 class="display-6">Shoots</h2>
+      <p class="lead">Check out my latest <a href="shoots/index.php" class="text-decoration-underline">photoshoots</a> and visual work.</p>
+    </div>
+  </section>
+
+  <!-- Work Section -->
+  <section id="work" class="section text-center">
+    <div class="container">
+      <h2 class="display-6">Work</h2>
+      <p class="lead">Past projects, collaborations, and digital experiments will live here. Check back soon!</p>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="section text-center">
+    <div class="container">
+      <h2 class="display-6">Contact</h2>
+      <p class="lead">Drop me a line at <a href="mailto:richard@rgparkins.co.uk">richard@rgparkins.co.uk</a></p>
+    </div>
+  </section>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
