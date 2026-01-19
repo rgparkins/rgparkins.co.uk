@@ -1,334 +1,224 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
 <head>
-    <title>Richard Parkins - Resume</title>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Richard Parkins – CV</title>
+  <style>
+    :root {
+      --text: #111827;
+      --muted: #4B5563;
+      --border: #E5E7EB;
+      --bg: #FFFFFF;
+      --chip: #F3F4F6;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: #f8fafc;
+      color: var(--text);
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Noto Sans", "Liberation Sans", sans-serif;
+      line-height: 1.45;
+    }
+    .page {
+      max-width: 980px;
+      margin: 28px auto;
+      padding: 0 18px;
+    }
+    .card {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      box-shadow: 0 10px 30px rgba(0,0,0,.05);
+      overflow: hidden;
+    }
+    header {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      padding: 24px;
+      border-bottom: 1px solid var(--border);
+    }
 
-    <meta name="viewport" content="width=device-width"/>
-    <meta name="description" content="The Resume of Richard Parkins - Technical Director for Consulting services"/>
-    <meta charset="UTF-8">
+    .photo {
+      width: 120px;
+      height: 120px;
+      border-radius: 999px;
+      object-fit: cover;
+      flex-shrink: 0;
+    }
+    h1 { margin: 0; font-size: 30px; letter-spacing: -0.02em; }
+    .role { margin-top: 6px; font-weight: 600; color: var(--muted); }
+    .meta { margin-top: 10px; color: var(--muted); font-size: 14px; }
+    .meta a { color: inherit; text-decoration: none; border-bottom: 1px dotted var(--border); }
+    .meta a:hover { border-bottom-color: var(--muted); }
+    main { padding: 22px 24px 26px 24px; }
+    h2 {
+      margin: 18px 0 10px 0;
+      font-size: 16px;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      color: #111827;
+    }
+    h3 { margin: 14px 0 6px 0; font-size: 15px; }
+    p { margin: 8px 0; color: var(--text); }
+    ul { margin: 8px 0 10px 20px; padding: 0; }
+    li { margin: 6px 0; }
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+    }
+      
+    @media print {
+      header {
+          display: flex !important;
+          flex-direction: row !important;
+          align-items: center !important;
+      }
+    }
 
-    <link type="text/css" rel="stylesheet" href="style.css">
-    <link href='https://fonts.googleapis.com/css?family=Rokkitt:400,700|Lato:400,300' rel='stylesheet' type='text/css'>
-
-    <!--[if lt IE 9]>
-    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
+    @media (max-width: 820px) {
+      header { grid-template-columns: 1fr; }
+      .photo { width: 96px; height: 96px; }
+      .grid { grid-template-columns: 1fr; }
+    }
+    .chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 10px;
+    }
+    .chip {
+      background: var(--chip);
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      padding: 6px 10px;
+      font-size: 12px;
+      color: var(--muted);
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+    }
+    th, td {
+      padding: 12px 12px;
+      border-bottom: 1px solid var(--border);
+      vertical-align: top;
+      text-align: left;
+      font-size: 14px;
+    }
+    th {
+      background: #F9FAFB;
+      font-weight: 700;
+      width: 220px;
+    }
+    .small { font-size: 13px; color: var(--muted); }
+  </style>
 </head>
-<body id="top">
-<div id="cv" class="instaFade">
-    <div class="mainDetails">
-        <div id="headshot" class="quickFade">
-            <img src="favicon.ico" alt="Richard Parkins" />
+<body>
+  <div class="page">
+    <div class="card">
+      <header>
+        <!-- Replace profile.jpg with your actual image filename -->
+        <img class="photo" src="../favicon.ico" alt="Richard Parkins profile photo"/>
+        <div>
+          <h1>Richard Parkins</h1>
+          <div class="role">Director of Technology / Head of Engineering / Principal Architect</div>
+          <div class="meta">London, UK | rgparkins@hotmail.com | 07764 684815 | www.rgparkins.co.uk</div>
+          <div class="chips" aria-label="key tags">
+            <span class="chip">Director-level leadership</span>
+            <span class="chip">Building teams</span>
+            <span class="chip">Technical leadership</span>
+            <span class="chip">Architecture & Assurance</span>
+            <span class="chip">Azure & AWS</span>
+            <span class="chip">Security-by-design</span>
+            <span class="chip">Platform & Delivery</span>
+          </div>
         </div>
+      </header>
 
-        <div id="name">
-            <h1 class="quickFade delayTwo">Richard Parkins</h1>
-            <h2 class="quickFade delayThree">Technical Director</h2>
-        </div>
+      <main>
+        <h2>Executive Profile</h2>
+        <p>Senior technology leader with 30+ years of experience spanning hands-on software engineering, enterprise and solution architecture, and Director-level leadership. Proven track record designing and delivering secure, cloud-native platforms at national scale while building and leading high-performing engineering organisations. Known for combining deep technical credibility with pragmatic leadership, operating comfortably from code and architecture reviews through to executive governance and board-level discussion.</p>
 
-        <div id="contactDetails" class="quickFade delayFour">
+        <div class="grid">
+          <section>
+            <h2>Leadership &amp; Technical Capabilities</h2>
             <ul>
-                <li>w: <a href="http://www.rgparkins.co.uk">rgparkins.co.uk</a></li>
+              <li><strong>Technology & Engineering Strategy</strong>: defining vision, roadmaps, and operating models aligned to business outcomes</li>
+              <li><strong>Architecture Leadership</strong>: enterprise, solution, and platform architecture across Azure and AWS estates</li>
+              <li><strong>Hands-on Technical Depth</strong>: microservices, APIs, event-driven systems, data integration, and distributed systems</li>
+              <li><strong>Security & Risk</strong>: IAM, PIM, WAF, OWASP, threat modelling, and secure-by-design delivery</li>
+              <li><strong>Cloud Platforms</strong>: Azure & AWS PaaS/IaaS, networking, identity, resilience, and observability</li>
+              <li><strong>DevOps & Delivery</strong>: CI/CD, infrastructure as code, reliability engineering, and developer enablement</li>
+              <li><strong>Engineering Leadership</strong>: org design, hiring, mentoring, performance management, and succession planning</li>
+              <li><strong>Governance & Assurance</strong>: design authorities, architecture reviews, GDS-aligned assurance, and audit support</li>
+              <li><strong>Commercial & Stakeholder Engagement</strong>: executive communication, supplier management, and bid support</li>
             </ul>
+          </section>
+
+          <section>
+            <h2>Selected Programmes &amp; Transformations</h2>
+            <ul>
+              <li><strong>Department for Education (DfE)</strong>: Principal Architect and Head of Engineering across multiple Azure-hosted national services; responsible for target architectures, security posture, delivery assurance, and operational resilience.</li>
+              <li><strong>Comparethemarket – Pricing Platform</strong>: Lead Architect for multi-year transformation from on-prem monolith to AWS microservices; enabled daily deployments, improved resilience, and reduced operational cost by ~25%.</li>
+              <li><strong>Real-time Quotability & Partner Risk Monitoring</strong>: Designed event-driven services and observability tooling to protect revenue and reduce incident detection and recovery from days to minutes.</li>
+            </ul>
+          </section>
         </div>
-        <div class="clear"></div>
+
+        <h2>Technical Skills &amp; Tooling</h2>
+        <p class="small">Detailed, resource-level experience across cloud platforms, data stores, integration patterns, delivery pipelines, security controls and operational tooling.</p>
+        <table>
+          <tr><th>Languages & Frameworks</th><td>C#, .NET (Core / Framework); Java; JavaScript / TypeScript; Node.js; Python (automation, scripting)</td></tr>
+          <tr><th>Data Stores</th><td>SQL Server (design, optimisation, HA/DR); PostgreSQL; MongoDB; Cosmos DB; Redis</td></tr>
+          <tr><th>Cloud Platforms</th><td><strong>Azure</strong>: App Services, Functions, AKS, Storage, Service Bus, Event Grid, Azure SQL, Key Vault<br/><strong>AWS</strong>: EC2, ECS, Lambda, RDS, DynamoDB, S3, CloudWatch, API Gateway</td></tr>
+          <tr><th>Architecture & Integration</th><td>REST & OpenAPI-driven APIs; Event-driven architecture (CQRS, Service Bus, SNS/SQS, EventBridge, RabbitMQ, TibCo); Microservices & modular monolith decomposition; DDD; Consumer-driven contract testing</td></tr>
+          <tr><th>DevOps & Delivery</th><td>CI/CD: GitHub Actions, Azure DevOps, TeamCity; IaC: ARM, Bicep, Terraform; Containerisation: Docker, Kubernetes; Feature flags & progressive delivery</td></tr>
+          <tr><th>Security & Compliance</th><td>IAM, RBAC, PIM, secrets management; OWASP Top 10; WAF configuration; Threat modelling; Public sector audit & compliance</td></tr>
+          <tr><th>Observability & Operations</th><td>Application Insights; Azure Monitor / Log Analytics; CloudWatch; Centralised logging & alerting; Incident management & PIRs</td></tr>
+        </table>
+
+        <h2>Professional Experience</h2>
+        <h3>Technical Director / Head of Engineering — Talent Consulting (2021–Present)</h3>
+        <ul>
+          <li>Built and led permanent multidisciplinary engineering capability (engineering, architecture, DevOps, QA).</li>
+          <li>Principal Architect for Department for Education programmes, providing hands-on architecture leadership and assurance.</li>
+          <li>Designed cloud-native platforms on Azure, covering identity, integration, data, and operational tooling.</li>
+          <li>Established reference architectures, engineering standards, and communities of practice across portfolios.</li>
+          <li>Regularly present technical strategy, delivery status, and risk at DD-level and senior governance forums.</li>
+          <li>Supported bids and technical propositions contributing to multi-million-pound public sector contract wins.</li>
+        </ul>
+
+        <h3>Key Architecture Leadership – CPD & Family Hubs (DfE) (2021–2023)</h3>
+        <ul>
+          <li>Lead / Principal Architect for the Continuing Professional Development (CPD) and Family Hubs programmes within the Department for Education portfolio.</li>
+          <li>Architectural ownership of Azure-based, cloud-native services supporting nationally significant outcomes for education professionals and vulnerable families.</li>
+          <li>Defined target architectures covering identity, access management, API-led integration, data flows, reporting, and operational tooling, aligned to GDS and DfE standards.</li>
+          <li>Led architectural decision-making across multiple delivery teams and suppliers, including service boundaries, data ownership, and integration patterns.</li>
+          <li>Embedded security-by-design in collaboration with cyber and assurance teams (IAM, network segmentation, secrets management, audit readiness).</li>
+          <li>Provided hands-on architectural oversight across discovery, alpha, beta, and live phases, including design reviews, ADRs, and delivery assurance.</li>
+          <li>Regular engagement with senior stakeholders to communicate architectural trade-offs, delivery risks, and long-term sustainability considerations.</li>
+        </ul>
+
+        <h3>Applications Architect — Comparethemarket (2017–2021)</h3>
+        <ul>
+          <li>Architectural owner for the core Pricing Platform and partner risk services supporting high-volume consumer traffic.</li>
+          <li>Led decomposition of a large on-prem monolith into AWS-based microservices using API-led and event-driven patterns.</li>
+          <li>Introduced resilience patterns, observability, contract testing, and automated security scanning across the platform.</li>
+          <li>Improved deployment frequency from monthly to daily while reducing incidents and mean time to recovery.</li>
+          <li>Mentored senior engineers and tech leads; chaired technical forums to improve cross-team alignment.</li>
+        </ul>
+
+        <h2>Education</h2>
+        <p><strong>BEng (Hons) Electrical & Electronic Engineering</strong> — Loughborough University (First Class)</p>
+      </main>
     </div>
-
-    <div id="mainArea" class="quickFade delayFive">
-        <section>
-            <article>
-                <div class="sectionTitle">
-                    <h1>Personal Profile</h1>
-                </div>
-
-                <div class="sectionContent">
-                    <p>
-                        I hold a 1st class honours degree in Electronic & Electrical Engineering, where my fascination with software development emerged despite the technical depth of my studies. Upon graduation, I swiftly immersed myself in the dynamic realm of embedded programming, evolving from a junior developer to embracing languages such as Java, C#, and more recently, NodeJS, as the internet landscape unfolded.</p>
-                    <p>
-                        Transitioning into a Solutions Architect role at CompareTheMarket allowed me to further cultivate my passion for building robust systems. My journey continued when Talent Consulting entrusted me with leading their IT team, concurrently engaging in architecting projects within the public sector, predominantly in Azure, with additional expertise in AWS.
-                    </p>
-                    <p>
-                        Having traversed diverse sectors like education, retail, and insurance, I've donned various hats, from Senior Software Engineer to Head of Architecture. Two driving passions define my professional ethos: crafting straightforward solutions to address customer challenges and steering initiatives towards seamless transitions from on-premise to cloud, especially in the realm of greenfield cloud solutions.
-                    <p>
-                        In my current capacity, I engage in a dynamic blend of 70% hands-on project work, contributing to the delivery of solution and infrastructure projects in the cloud. The remaining 30% is dedicated to leadership responsibilities, where I actively nurture and build a permanent team. My focus extends beyond project execution; I am committed to instilling a culture of community practice, refining work methodologies, and implementing best practices for delivering innovative solutions to our public sector clients.
-                    </p>
-                    <p>
-                        My rich experience has underscored a fundamental truth, teams don't organically form; they require the right individuals exhibiting the right behaviors. Coupled with clear direction and a well-defined career path, this combination cultivates a sense of ownership and community—hallmarks of success in thriving organisations.
-                    </p>
-                </div>
-            </article>
-            <div class="clear"></div>
-        </section>
-        <section>
-            <div class="sectionTitle">
-                <h1>Key Skills</h1>
-            </div>
-
-            <div class="sectionContent keySkills">
-                <ul>
-                    <li>Expertise in forming high-performing teams and acquiring the right talent</li>
-                    <li>Effective career and line management to retain and develop individual developers, ensuring alignment with their career goals</li>
-                    <li>Proficient in managing architectural transitions, specifically from on-premise to cloud environments</li>
-                    <li>Demonstrated leadership and communication skills, adept at guiding teams in alignment with a shared vision</li>
-                    <li>In-depth knowledge of cloud architecture and development, spanning PaaS, IaaS, and SaaS</li>
-                    <li>Specialised in designing and implementing micro-service architectures</li>
-                    <li>Proficient in Cloud PaaS and Saas offerings on AWS and Azure for network, storage and compute</li>
-                    <li>Security practices around cloud platforms, PIM, OpenIdConnect, Cyber, OWASP, WAF</li>
-                    <li>CI/CD: Azure devops, github actions, Teamcity</li>
-                    <li>Database tech: MongoDb, SQL Server, postgres, MySQL</li>
-                    <li>Messaging platforms: Kafka, ServiceBus, EventGrid, RabbitMQ</li>
-                    <li>Expert in REST, Swagger/OpenAPI, and HATEOS principles</li>
-                    <li>Monitoring: GDS Agile process, Technology codes of practice on GOV uk</li>
-                    <li>Thorough understanding of Agile principles, Lean development, and collaborative practices like pairing and mobbing</li>
-                    <li>Skilled in utilising various monitoring tools including Splunk, Grafana, Prometheus, ELK, Azure App Insights, and Log Analytics</li>
-                    <li>Expertise in NetCore and NodeJS development and POC's</li>
-                </ul>
-            </div>
-            
-            <div class="clear"></div>
-        </section>
-        <section>
-            <div class="sectionTitle">
-                <h1>Work</h1>
-            </div>
-            <div class="sectionContent">
-                <article>
-                    <h2>Technical director</h2>
-                    <div class="subDetails">Talent Consulting (2021 - present)</div>
-                    <p>
-                        As the Technical Director of Talent Consulting, I've played a pivotal role in building a robust permanent team, 
-                        ensuring the retention of valuable knowledge while our consultants engage in public sector contracts. The team has grown from its inception to a core unit of 20 professionals, spanning various disciplines, including architects, developers, dev-ops, and testing. Additionally, I collaborated in establishing the business side, comprising Delivery Managers, Business Analysts, and Product Owners, working closely with our Head of Delivery.
-                    </p>
-                    <p>
-                        Balancing team responsibilities at Talent, I am concurrently engaged as a Principal Architect at the 
-                        Department for Education (DfE). Leading multiple projects within the Vulnerable Children and Families portfolio, 
-                        I am actively involved in DD level reviews, show and tells, and the complete GDS agile process, presenting progress, ideas, and potential risks to the client.
-                    </p>
-                    <p>
-                        As a key member of the leadership team at Talent, I contribute to winning new business by creating presentations and responses to tenders. To date, my efforts have contributed to securing £30M of new business at the DfE, MOJ, and ESFA.
-                    </p>
-                    <h3>Strategic Leadership</h3>
-                    <ul class="highlights">
-                        <li>Developed and implemented a strategy to grow the Talent Consulting permanent resource, enhancing knowledge retention and boosting revenue.</li>
-                        <li>As part of the leadership team, introduced new software platforms to automate processes, immediately improving our success rate to stage 2 by 50%.</li>
-                        <li>Conducted quarterly senior leadership team meetings to formulate and review 6-month, 1-year, and 3-year business plans.</li>
-                        <li>Collaborated with the senior leadership team to recruit a Director of Sales, driving new business development and forging key relationships within the public sector.</li>
-                    </ul>
-                    <h3>Innovation and Development</h3>
-                    <ul class="highlights">
-                        <li>Introduced Grafana dashboards at the Department for Education (DfE), showcasing the benefits of a unified dashboard for business and technical information. This portfolio is now a model for cost-effective and stable cloud-based data visualisation.</li>
-                        <li>Implemented Azure AI on our portfolio site to enable quick searches of assets and materials relevant to social workers.</li>
-                        <li>Deployed GitHub Actions across the DfE portfolio, reducing costs compared to complex and expensive Azure alternatives, and setting a standard for future implementations.</li>
-                        <li>Developed a plan to automate delivery reporting from our public sector contracts, utilising AI to identify and highlight contracts with potential issues for proactive investigation.</li>
-                    </ul>
-                    <h3>Team Management</h3>
-                    <ul class="highlights">
-                        <li>Regular 121's with the team, focused on their growth and well being</li>
-                        <li>Regular monthly collaboration session with technical team, with reviews of new tech and team issues</li>
-                        <li>Quarterly face to face meet ups, forming an agenda around better ways of working and how we can help our clients</li>
-                        <li>Bi-annually reviews for team promotions, salary increases</li>
-                    </ul>
-                    <h3>Collaboration</h3>
-                    <ul class="highlights">
-                        <li>Weekly collaboration sessions with the business and technical teams on ways of working</li>
-                        <li>Working with the SLT and bid management team on bid management and process, improving the bid library and improving our responses</li>
-                        <li>Working alongside the HR director to improve contract terms, business terms and ways of working</li>
-                        <li>Collaborating with the client SLT to improve standards and governance around cloud management and security</li>
-                    </ul>
-                    <h3>Product development</h3>
-                    <ul class="highlights">
-                        <li>Full product lifecycle from POC to live  for a cloud hosted internal product to allow our resources placed on client sites to feedback on weekly reports. Alerts pushed to SLT at Talent under Red RAG status. Allowed SLT to remediate potential up and coming issues</li>
-                        <li>Full GDS principles applied for agile delivery, architecture documentation created (High level designs) and swagger documents for developers</li>
-                        <li>Client side frameworks for full support of mobile and desktop</li>
-                        <li>Mobile applications (PWA) development for solutions at Skills Funding Agency</li>
-                    </ul>
-                    <h3>Technical Expertise</h3>
-                    <ul class="highlights">
-                        <li>Azure and AWS experience of deploying application to the cloud</li>
-                        <li>PaaS, SaaS and IaaS on multiple platforms, leveraging component for scaling, stability and security</li>
-                        <li>Applications written in c#, nodejs</li>
-                        <li>Ci/CD - github actions, ADO, cloud formation</li>
-                        <li>Lead architect at multiple projects at the DfE and ESFA</li>
-                    </ul>
-                    <h3>Security and Compliance</h3>
-                    <ul class="highlights">
-                        <li>Led an initiative to review all security aspects of the cloud infrastructure at the DfE, providing a presentation with recommendations to the Deputy Director</li>
-                        <li>Security by design on all aspects of cloud solutions</li>
-                        <li>Passed multiple IT health checks for outside in cyber security and internal reviews</li>
-                        <li>Implementations of security components, WAF, NSG protecting against OWASP top 10 and DDOS cyber attacks</li>
-                    </ul>
-                    <hr />
-                </article>
-            </div>
-            
-            <div class="sectionContent">
-                <article>
-                    <h2>Applications Architect</h2>
-                    <p class="subDetails">CompareTheMarket (2017 - 2021)</p>
-                    <p>
-                        As the Technical Product Owner and Lead Architect for the Pricing platform and Partner Risk Mapping service at CompareTheMarket, I played a pivotal role in overseeing these systems, regarded as the cornerstone of our business and hosted on AWS. I managed a team of 3 tech leads and a diverse group of around 20 individuals, spanning both development and business roles.
-                    </p>
-                    <p>
-                        My responsibilities included crafting the architectural vision for the new Pricing Platform, focusing on enhancing scalability, stability, and security while prioritising customer-centric design principles.
-                    </p>
-                    <p>
-                        Serving as the lead developer, I spearheaded the migration of the pricing platform to a micro-service architecture over a two-year period. This transformation resulted in a shift from intra-month deployments to daily real-time deployments, significantly improving scalability and reducing customer downtime by 30%. Additionally, our remediation times saw notable enhancements through the implementation of more effective common monitoring dashboards.
-                    </p>
-                    <p>
-                        I architected and developed a new real-time quotability system, complete with Grafana dashboards, enabling swift issue detection and resolution at our providers. This initiative substantially reduced our time-to-fix from hours/days to minutes, leading to a tangible increase in revenue on a month-to-month basis.
-                    </p>
-                    <p>
-                        In the role of Chair of the Technical Forum and leader of various working groups, I contributed to the design and implementation of common initiatives across the department. The introduction of contract testing on a department-wide scale proved instrumental in reducing incidents on deployment by enabling testing against a specific set of contract tests.
-                    </p>
-                    <p>
-                        Pioneering the concept of a service catalogue, I empowered teams to automate catalogue population. This initiative not only facilitated documentation generation but also played a crucial role in reducing the mean time to failure during incidents. Furthermore, it enabled the automation of various immunisation reporting tasks.
-                    </p>
-                    <p>
-                        The introduction of automation for specific immunisation tasks, hosted on our dedicated AWS GitHub Action runner and scheduled via cron timers, streamlined the scanning of each microservice repository through tools like SonarQube, Checkmarx, and OWASP Zap.
-                    </p>
-                    <p>
-                        My active participation in numerous tech leadership, speaking, and influencing workshops contributed valuable insights that were effectively implemented in real-world scenarios, fostering growth and innovation at CompareTheMarket.
-                    </p>
-                    <hr>
-                </article>
-
-                <article>
-                    <h2>Technical Lead Developer / Architect</h2>
-                    <p class="subDetails">CompareTheMarket (2016 - 2017)</p>
-                    <p>
-                        Leading a dedicated team, I conceptualised, developed, and maintained the innovative Pricing Platform at CompareTheMarket. Prioritising security, scalability, and diagnostic capabilities from the outset, our approach aimed for a robust and future-proof system.
-                    </p>
-                    <p>
-                        Our system effectively supported up to 10 journey and retrieval transactions per second, hosted on AWS and utilising technologies such as EC2, Lambda, S3, and CodeDeploy.
-                    </p>
-                    <p>
-                        The architecture included Swagger specifications defining REST endpoints, ensuring secure communication through bearer token authentication via OAuth.
-                    </p>
-                    <p>
-                        In addition to technical leadership, a significant aspect of my role involved mentoring and guiding the career paths of the developers within the team, fostering their professional growth.
-                    </p>
-                    <hr>
-                </article>
-                
-                <article>
-                    <h2>Consultant Lead Developer</h2>
-                    <p class="subDetails">CompareTheMarket (Energy and Motor Journeys 2013 - 2016)</p>
-                    <p>
-                        Collaborating with the team, I played a key role in architecting and developing a groundbreaking concept – allowing users to capture an image of their energy bill through an IOS app and receive a quote seamlessly.
-                    </p>
-                    <p>
-                        Leveraging MongoDB for storage and hosting the solution on AWS, the front end was crafted using AngularJS. The accompanying administration site was developed with Bootstrap and AngularJS.
-                    </p>
-                    <p>
-                        As part of the project, I also created a re-buy portal, enabling customers to effortlessly renew their services with a single click.
-                    </p>
-                    <hr>
-                </article>
-                
-                <article>
-                    <h2>Consultant</h2>
-                    <p class="subDetails">Easyjet (Seat purchase: Consultant (2012 - 2013)</p>
-                    <p>
-                        Contributed to the development team that pioneered one of the aviation industry's initial seat selection services. Utilised an MVC and KnockoutJS solution hosted on Microsoft Azure.
-                    </p>
-                    <p>
-                        Engineered an Azure ServiceBus solution facilitating a 3rd-party provider's access to a Restful API for real-time validation of pluscard data during bookings.
-                    </p>
-                    <p>
-                        Implemented a PHP client to enable the 3rd party's interaction with the Windows Azure ServiceBus.
-                    </p>
-                    <hr>
-                </article>
-
-                <article>
-                    <h2>Consultant</h2>
-                    <p class="subDetails">Tesco Entertainment (2011 - 2012)</p>
-                    <p>
-                        Contributed to a collaborative team tasked with enhancing functionality on the www.tescoentertainment.com website and its supporting applications. Employed Agile (SCRUM) methodologies for planning and presenting on bi-weekly sprints.
-                    </p>
-                    <p>
-                        Spearheaded the development of a conceptual Android application using Java, facilitating the purchase and download of MP3 tracks within the allocated time and budget. This project was seamlessly integrated alongside the ongoing dot net development responsibilities.
-                    </p>
-                    <p>
-                        Played a key role in maintaining and advancing features on the Endeca search service utilised by the primary entertainment site.
-                    </p>
-                    <p>
-                        Successfully developed and implemented the price cross-out feature (was/now/save) for all 400,000 products, contributing to the live deployment of this enhancement.
-                    </p>
-                    <hr>
-                </article>                
-
-                <article>
-                    <h2>Consultant</h2>
-                    <p class="subDetails">Cambridge University (OCR) (2008 - 2011)</p>
-                    <p>
-                        Played a pivotal role in a collaborative team dedicated to enhancing functionality for the primary OCR Examination portal at Cambridge University. This site caters to 35,000 different centers worldwide, overseeing candidate entries and results through a unified platform. The development process followed Agile (SCRUM) methodologies, organised into bi-weekly sprints, and incorporated a new MVC design pattern.
-                    </p>
-                    <p>
-                        Led the development as the key contributor to upgrading existing disconnected entry sites, consolidating them into a single platform. This streamlined user management of GCSE and Vocational Qualification data in one centralised area, significantly improving efficiency during candidate entry processes.
-                    </p>
-                    <p>
-                        Took charge of introducing code review and implementing new unit testing methods within the department, fostering a culture of continuous improvement.
-                    </p>
-                    <p>
-                        Innovated the process of silent deploys, reducing site downtime in numerous cases and enhancing the overall deployment efficiency.
-                    </p>
-                    <hr>
-                </article>                
-
-                <article>
-                    <h2>Director</h2>
-                    <p class="subDetails">TouchScreenData (Director 2004 - 2008)</p>
-                    <p>
-                        Established a company dedicated to developing online management systems, primarily written in C# .NET 2.0/3.5, with occasional small-scale sites developed in LAMP.
-                    </p>
-                    <p>
-                        Led the tendering process and effectively presented our solutions, demonstrating strong communication skills and the ability to articulate technical solutions to a diverse audience.
-                    </p>
-                    <hr>
-                </article>                
-
-                <article>
-                    <h2>Other</h2>
-                    <p class="subDetails">1994 - 2004</p>
-                    
-                    <h3>Thompson Reuters</h3>
-                    <p>
-                        Contributed as a developer in writing financial applications for the city. Engaged in the development of Merrill Lynch WAP site using PHP and Windows-based apps written in .NET 1.0. Implemented a world cup SMS messaging service with the Tib Rendezvous messaging platform.
-                    </p>
-                    <p>
-                        Maintained and developed new pager systems on both the front and back ends, utilising Java and Websphere, with Apache Tomcat serving as the hosting platform.
-                    </p>
-                    
-                    <h3>ICS Triplex</h3>
-                    <p>
-                        Involved in the development of safety-critical systems for the Oil and Nuclear industry. Engaged in embedded software development with external company audits.
-                    </p>
-                    
-                    <h3>Emerson Liebert</h3>
-                    <p>
-                        Contributed to the development of embedded software control systems for Uninterruptible Power Supply units.
-                    </p>
-                </article>                
-            </div>
-            <div class="clear"></div>
-        </section>
-        <section>
-            <div class="sectionTitle">
-                <h1>Education</h1>
-            </div>
-
-            <div class="sectionContent">
-                <article>
-                    <h2>Loughborough University</h2>
-                    <p class="subDetails">1st Class Hons in Electrical & Electronic Engineering</p>
-                    <p>4 years (3 years + 1 in industry)</p>
-                </article>
-            </div>
-            <div class="clear"></div>
-        </section>
-
-    </div>
-</div>
+  </div>
 </body>
 </html>
